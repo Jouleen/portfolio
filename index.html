@@ -37,7 +37,7 @@ header {
 
 nav {
   background: black;
-  position: inherit;
+  position: auto;
   float: left;
   width: 25%;
   height: 100%;
@@ -236,7 +236,7 @@ footer {
     </ul>
   </nav>
   
-  <button onclick="topFunction()" id="myBtn" title="Go to top" class="p2">Back to top!</button>
+  <button onclick="topFunction()" id="myBtn" title="Back to top" class="p2">Back to top!</button>
 
   <article>
     <div class="container">
@@ -278,7 +278,7 @@ var mybutton = document.getElementById("myBtn");
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
+  if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
     mybutton.style.display = "block";
   } else {
     mybutton.style.display = "none";
