@@ -236,7 +236,7 @@ footer {
     </ul>
   </nav>
   
-  <button onclick="topFunction()" id="myBtn" title="Go to top" class="p2">You've reach the end!</button>
+  <button onclick="topFunction()" id="myBtn" title="Go to top" class="p2">Back to top!</button>
 
   <article>
     <div class="container">
@@ -278,7 +278,7 @@ var mybutton = document.getElementById("myBtn");
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 750 || document.documentElement.scrollTop > 750) {
+  if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
     mybutton.style.display = "block";
   } else {
     mybutton.style.display = "none";
@@ -290,24 +290,6 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 </script>
-
-<script>
-      
-      function changeText(text)
-      {
-          var display = document.getElementById('myBtn');
-          display.innerHTML = "";
-          display.innerHTML = text;
-      }
-            
-      function defaultText()
-      {
-          var display = document.getElementById('myBtn');
-          display.innerHTML = "Back to top";
-          display.innerHTML = "Back to top";
-      }
-        
-  </script>
 
 </section>
 
