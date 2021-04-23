@@ -5,34 +5,44 @@
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<link rel="stylesheet" href="https://use.typekit.net/mpp5smq.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
 * {
   box-sizing: border-box;
   margin: 0;
 }
 
-  .p1 {
-  font-family: "Lucida Console", "Courier New", monospace;
+.p1 {
+  font-family: acme-gothic-wide,sans-serif;
+  font-weight: 700;
+  font-style: normal;
   }
 
-  .p2 {
-  font-family: 'Trebuchet MS', sans-serif;
+.p2 {
+  font-family: haboro-contrast-normal, sans-serif;
+  font-weight: 700;
+  font-style: normal;;
   }
+
 
 header {
-  background-color: #666;
-  padding: 30px;
+  background: black;
+  padding: 25px;
   text-align: left;
-  font-size: 35px;
+  font-size: 45px;
   color: white;
 }
 
 nav {
+  background: black;
+  position: inherit;
   float: left;
-  width: 30%;
-  height: 600px;
-  background: #ccc;
-  padding: 20px;
+  width: 25%;
+  height: 100%;
+  padding: 40px;
+  color: white;
 }
 
 nav ul {
@@ -41,14 +51,11 @@ nav ul {
 }
 
 article {
-  float: left;
+  float: right;
   padding: 20px;
-  width: 70%;
-  background-color: #f1f1f1;
-  div {
-    opacity: 0.5;
-  }
-  height: 600px;
+  width: 75%;
+  background-color: black;
+  height: relative;
 }
 
 section::after {
@@ -58,10 +65,13 @@ section::after {
 }
 
 footer {
-  background-color: #777;
+  background-color: black;
   padding: 10px;
   text-align: center;
   color: white;
+  width: 100%;
+  bottom: 0;
+  position: relative;
 }
 
 @media (max-width: 600px) {
@@ -70,33 +80,240 @@ footer {
     height: auto;
   }
 }
+
+.container {
+  position: relative;
+  width: 100%;
+  padding: 0px;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  border-radius: 25px;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  border-color: blue;
+  border-style: solid;
+  border-width: 7.5px;
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: blue;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+  border-radius: 5px;
+}
 </style>
 </head>
+
+
 <body>
-<header>
-  <h2 class="p2">Zhiying Shi</h2>
-  <style>    body {
-    background-image: url('https://i.pinimg.com/originals/bd/8b/ef/bd8befb40da1e6cb3f3f55e6205f91d9.jpg');
+  <header>
+    <style>
+      div a {
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        padding: 15px;
+        display:inline-block;
+      }
+      ul {
+        display: inline;
+        margin: 0;
+        padding: 0;
+      }
+      ul li {display: inline-block;}
+      ul li:hover {background: black;}
+      ul li:hover ul {display: block;}
+      ul li:hover .fa-caret-down {display: none;}
+      ul li ul {
+        position: auto;
+        width: 200px;
+        display: none;
+      }
+      ul li ul li { 
+        background: black; 
+        display: block; 
+      }
+      ul li ul li a {display:block !important;} 
+      ul li ul li:hover {background: blue;}
+      ul li ul li:hover .fa-caret-down {display: block;}
+      ul li ul li:hover .dropdown-container {display: block;}
+
+      .fa-caret-down {
+        float: right;
+        padding: 0px;
+      }
+
+      .active {
+        background-color: black;
+        color: white;
+      }
+
+      .dropdown-container {
+        display: none;
+        background-color: blue;
+        padding-left: 8px;
+      }
+
+      #myBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        left: 35px;
+        z-index: 99;
+        font-size: 18px;
+        background-color: black;
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        border-style: none;
+        border-radius: 5px;
+      }
+
+      #myBtn:hover {
+        background-color: blue;
+      }
+
     </style>
-</header>
+
+    <div>
+      <ul>
+        <li>
+          <a href="#">
+            <h1 class="p1">Zhiying Shi</h1>
+          </a>
+          <ul>
+            <li class="p2"><a href="#">GALLERY
+                <i class="fa fa-caret-down"></i>
+            </a></li>
+              
+              <div class="p2 dropdown-container">
+                <li><a href="#">2D</a></li>
+                <li><a href="#">3D</a></li>
+                <li><a href="#">Archive</a></li>
+              </div>
+            <li class="p2"><a href="#">ABOUT</a></li>
+            <li class="p2"><a href="#">CONTACT</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <style>
+    body {
+      background: black;
+    </style>
+  </header>
 
 <section>
   <nav>
-    <ul class="p1">
-      <li><a href="#">HOME</a></li>
-      <li><a href="#">GALLERY</a></li>
-      <li><a href="#">ABOUT</a></li>
+    <ul>
+    <p class="p1">Recent works :)</p>
     </ul>
   </nav>
   
+  <button onclick="topFunction()" id="myBtn" title="Go to top" class="p2">You've reach the end!</button>
+
   <article>
-    <h1 class="p2">HOME</h1>
-    <p class="p1">Hello! This is my portfolio :)</p>
+    <div class="container">
+      <img src="https://s3.amazonaws.com/media.slideroom.com/applicant/326/433/2334623/b48946c4-d525-4334-87c5-d14816c7797a.1280x1280.gif?AWSAccessKeyId=AKIAJ4L22QH7HS4DKN4Q&Expires=1619236525&Signature=W8KOxHgnhmnwdkay1UMe1Z5xodE%3d" alt="image" class="image" style="width:100%">
+    <div class="middle">
+      <div class="p2 text">VIEW</div>
+    </div>
+    </div>
   </article>
+
+  <article>
+    <div class="container">
+      <img src="https://static.wixstatic.com/media/ac5bad_a386b14005264dc694537059b88b55cf~mv2.png/v1/fill/w_802,h_460,al_c,q_90,usm_0.66_1.00_0.01/ricecake_fin.webp" alt="image" class="image" style="width:100%">
+    <div class="middle">
+      <div class="p2 text">VIEW</div>
+    </div>
+    </div>
+  </article>
+
+<script>
+var dropdown = document.getElementsByClassName("p2");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
+
+<script>
+var mybutton = document.getElementById("myBtn");
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 750 || document.documentElement.scrollTop > 750) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
+<script>
+      
+      function changeText(text)
+      {
+          var display = document.getElementById('myBtn');
+          display.innerHTML = "";
+          display.innerHTML = text;
+      }
+            
+      function defaultText()
+      {
+          var display = document.getElementById('myBtn');
+          display.innerHTML = "Back to top";
+          display.innerHTML = "Back to top";
+      }
+        
+  </script>
+
 </section>
 
+
 <footer>
-  <p class="p2">Zhiying Shi</p>
+  <p class="p1">Zhiying Shi</p>
 </footer>
 
 </body>
